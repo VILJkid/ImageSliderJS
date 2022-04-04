@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Slider</title>
+    <style>
+      .middle {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="middle">
+      <h3>Image Slider (Raw Carousel)</h3>
+      <p>Images will change in every 3s</p>
+    </div>
+    <div class="middle">
+      <img alt="Image not found" id="carouselImages" />
+    </div>
+
+    <script>
+      let images = ["img01.png", "img02.png", "img03.png"];
+      let target = document.getElementById("carouselImages");
+      let index = 0;
+
+      setInterval(() => {
+        if (index < images.length) {
+          target.setAttribute("src", images[index]);
+          target.setAttribute("width", "400px");
+          console.log(`${images[index]}`);
+          index++;
+        } else index = 0;
+      }, 3000);
+    </script>
+  </body>
+</html>
